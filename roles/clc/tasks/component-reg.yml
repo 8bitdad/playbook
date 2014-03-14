@@ -40,7 +40,7 @@
 
     - name: Wait for Walrus and his bukkitz
       action: wait_for host={hostvars.{$item}.ansible_$vnet_pub.ipv4.address} port=8773 delay=10 timeout=300
-      with_items: {{groups.walrus}}
+      with_items: ${groups.walrus}
 
     - name: Install ELB utils
       action: yum name=eucalyptus-load-balancer-image state=installed
