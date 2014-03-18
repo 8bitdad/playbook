@@ -47,6 +47,8 @@
 - hosts: clc
   vars_files:
     - vars/main.yml
+  tasks:
+  - include: roles/clc/tasks/component-reg.yml
     
 - hosts: walrus
   vars_files:
@@ -59,12 +61,6 @@
     - vars/main.yml
   tasks:
   - include: roles/sc/tasks/sc-keys.yml
-
-- hosts: clc
-  vars_files:
-    - vars/main.yml
-  tasks:
-  - include: roles/clc/tasks/component-reg.yml
 
 - hosts: cc
   vars_files:
